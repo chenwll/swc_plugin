@@ -151,5 +151,6 @@ impl VisitMut for CatchClauseVisitor {
 /// 插件入口
 #[plugin_transform]
 pub fn process_transform(program: Program, _metadata: TransformPluginProgramMetadata) -> Program {
+    println!("hello world");
     program.fold_with(&mut as_folder(CatchClauseVisitor::new()))
 }
